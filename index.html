@@ -4,30 +4,38 @@
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
-        <div>
-            Amount <input type="number"  id="principal">
+        
+        <div class="calculator">
+            <h1>Simple Interest Calculator</h1>
+            <div class="form-container">
+                <div class="flex-container">
+                    <label class="flex-item">Amount</label>
+                    <input class="flex-item" type="number" id="principal">
+                </div>
+                <div class="flex-container">
+                    <label class="flex-item" for="rate">Interest Rate</label>
+                    <input class="flex-item" type="range" min=0 max=20 step=0.5 id="rate" value=10 onchange="updateTextInput(this.value)">
+                    <p class="flex-item"><span id="ratex">10</span>%</p>
+                </div>
+                <div class="flex-container">
+                    <label class="flex-item" for="years">No. of Years</label>
+                    <select class="flex-item" name="years" id="years">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="flex-item" onclick="compute()">Compute Interest</button>
+                </div>
+                <div id="result">
+                </div>
+            </div>
+            <footer>
+                <p>&#169 Everyone Can Get Rich</p>
+            </footer>
         </div>
-        <div>
-            <label for="rate">Interest Rate</label>
-            <input type="range" min=0 max=20 step=0.5 id="ratex">
-            <p id="rate_output"></p>
-        </div>
-        <div>
-            <label for="years">No. of Years:</label>
-            <select name="years" id="years">
-                <option value=1>1</option>
-                <option value=2>2</option>
-                <option value=3>3</option>
-            </select>
-        </div>
-
-        <button onclick="compute()">Compute Interest</button>
-        <div>
-            Interest : <span id="result"></span><br>
-        </div>
-        <footer>
-            <p>&#169 Everyone Can Get Rich</p>
-        </footer>
     </body>
 </html>

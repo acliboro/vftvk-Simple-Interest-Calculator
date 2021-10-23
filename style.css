@@ -1,4 +1,38 @@
-body {background-color:white;}
-h1{color:gray;}
+body {
+    background: black;
+}
+h1{
+    color:gray;
+    font-weight: bold;
+    text-align: center;   
+}
+.calculator {
+  border-radius: 25px;
+  background: #FFFF;
+  padding: 20px; 
+  width: 400px;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;  
+  margin: auto;
+}
 
+label {
+    display: inline-flex;
+    width: 100px; 
+    float: left;
+}
 
+.form-container {
+    width: 300px; /* Can be in percentage also. */
+    margin: auto;
+    position: relative;
+}
+.flex-container {
+    /* We first create a flex layout context */
+  display: flex;
+  flex-direction: row;
+}
+.flex-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

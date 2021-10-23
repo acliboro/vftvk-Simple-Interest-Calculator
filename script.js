@@ -1,15 +1,26 @@
-var slider = document.getElementById("rate");
-var output = document.getElementById("ratex");
-output.innerHTML = slider.value; // Display the default slider value
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
+function updateTextInput(val){
+  document.getElementById('ratex').innerHTML=val;
 }
-
-function compute()
-{
-    p = document.getElementById("principal").value;
     
+function compute()
+{   
+    const d = new Date()
+    let year_today = d.getFullYear();
+    var result_node = document.getElementById("result");
+    result_node.removeChild(result_node.firstChild)
+    
+    var amount = document.getElementById("principal").value;
+    var rate = document.getElementById("rate").value;
+    var year = document.getElementById("years").value;
+    
+    var computed_amount = parseInt(amount)*(parseFloat(rate)/100)*parseInt(year)
+    var total_year = parseInt(year_today) + parseInt(year)
+    var firstline = "If you deposit <mark>" + amount + "</mark>,<br>"
+    var secondline = "at an interest rate of <mark>" + rate + "%</mark>.<br>"
+    var thirdline = "You will receive an amount of <mark>" + computed_amount + "</mark>,<br>"
+    var fourthline = "in the year <mark>" + total_year + "</mark>"
+    var totaline = "<p>"+firstline+secondline+thirdline+fourthline+"</p>"
+    result_node.insertAdjacentHTML('afterbegin', totaline)
 }
         
