@@ -5,6 +5,7 @@ function updateTextInput(val){
     
 function compute()
 {   
+    event.preventDefault();
     const d = new Date()
     let year_today = d.getFullYear();
     var result_node = document.getElementById("result");
@@ -22,5 +23,7 @@ function compute()
     var fourthline = "in the year <mark>" + total_year + "</mark>"
     var totaline = "<p>"+firstline+secondline+thirdline+fourthline+"</p>"
     result_node.insertAdjacentHTML('afterbegin', totaline)
+    
+      
 }
         
